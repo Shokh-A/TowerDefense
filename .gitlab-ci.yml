@@ -1,0 +1,36 @@
+image: ubuntu:20.04
+
+stages:
+  - build
+  - test
+  - deploy
+
+before_script:
+  - apt-get update -yqq
+  - apt-get install -yqq openjdk-16-jdk ant junit4
+
+build_game:
+  stage: build
+  script:
+    - ant compile
+    - ant jar
+
+test_model:
+  stage: test
+  script:
+    - >
+      ant test
+      -Dlibs.junit_4.classpath=/usr/share/java/junit4.jar
+      -Dlibs.hamcrest.classpath=/usr/share/java/hamcrest-core.jar
+
+pages:
+  stage: deploy
+  script:
+    - ant javadoc
+    - cp -r dist/javadoc/. public/
+  artifacts:
+    paths:
+      - public
+    expire_in: 1 day
+  only:
+    - master

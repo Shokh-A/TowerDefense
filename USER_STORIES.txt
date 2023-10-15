@@ -1,0 +1,60 @@
+AS A player
+I WANT TO build
+GIVEN it is my turn and build button is clicked
+WHEN i have enough gold and square is buildable on the board
+THEN i choose a square and build a building
+
+I WANT TO train unit
+GIVEN it is my turn and train button is clicked
+WHEN i have enough gold
+THEN the unit is trained and appears near the castle
+
+I WANT TO update a tower
+GIVEN i selected  a tower 
+WHEN i have enough money
+THEN selected tower is updated
+
+I WANT TO save my game
+GIVEN i clicked a save button
+WHEN i want to stop
+THEN the game is saved
+
+I WANT TO load saved game
+GIVEN there is a saved game
+WHEN i click on load button and choose a saved game
+THEN the game is loaded
+
+
+AS A tower
+I WANT TO defend castle = attack enemies
+GIVEN that i am built
+WHEN enemy units come close to my square (in range)
+THEN i start attacking enemy units
+
+
+AS A gold mine
+I WANT TO increase gold production
+GIVEN that i am built 
+WHEN turn is over
+THEN i increase gold amount
+
+AS A unit
+I WANT TO attack enemy
+GIVEN my type and shotest path
+WHEN enemy is in my attack range
+THEN i attack
+
+AS A monster
+I WANT TO attack everything
+GIVEN my health is more than 0
+WHEN in my range
+THEN i attack 
+
+
+
+
+
+
+ 
+
+
